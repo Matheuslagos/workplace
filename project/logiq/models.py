@@ -3,10 +3,13 @@ from django.db import models
 # Create your models here.
 
 
-class respons_tec(models.Model):
+class Responsavel_Tecnico(models.Model):
     nome = models.CharField(max_length=200)
     CNPJ = models.PositiveIntegerField()
     Num_Registro = models.PositiveIntegerField()
+
+    class Meta:
+        verbose_name_plural = 'Responsaveis Tecnicos'
 
 
 class Propriedade(models.Model):
@@ -16,41 +19,68 @@ class Propriedade(models.Model):
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
 
+    class Meta:
+        verbose_name_plural = 'Propriedades'
+
+    def __str__(self):
+        return self.descricao
+
 
 class ProdutorRural(models.Model):
     nome = models.CharField(max_length=200)
     propriedade = models.ForeignKey('Propriedade', on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = 'Produtores Rurais'
 
 
 class Diagnostico(models.Model):
     cultura = models.CharField(max_length=100)
     produto_comercial = models.CharField(max_length=100)
     alvo = models.CharField(max_length=100)
-    area_a_tratar = models.FloatField()
-    volume_da_calda = models.FloatField()
-    intervalo_de_seguranca = models.IntegerField()
+    area_a_tratar = models.CharField(max_length=30)
+    volume_da_calda = models.CharField(max_length=50)
+    intervalo_de_seguranca = models.CharField(max_length=50)
     modalidade_aplicacao = models.CharField(max_length=100)
     equipamento_aplicacao = models.CharField(max_length=100)
     quantidade_a_adquirir = models.IntegerField()
     n_aplicacoes = models.IntegerField()
-    epoca_aplicacao = models.DateField()
+    epoca_aplicacao = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name_plural = 'Diagnosticos'
 
 
 class PrecaucaoUso(models.Model):
     texto = models.TextField()
 
+    class Meta:
+        verbose_name_plural = 'Precaucoes de Uso'
 
-class equipamentos_epi():
+
+class equipamentos_protecao(models.Model):
     texto_equip = models.TextField()
 
+    class Meta:
+        verbose_name_plural = 'Equipamentos de Protecao Individual'
 
-class orientacoes_mip():
+
+class orientacao_mip(models.Model):
     texto_mip = models.TextField()
 
+    class Meta:
+        verbose_name_plural = 'Orientacoes MIP'
 
-class local_devolucao():
+
+class local_devolucao(models.Model):
     texto_dev = models.CharField(max_length=150)
 
+    class Meta:
+        verbose_name_plural = 'Locais de Devolucao'
 
-class Precaucao_orientacoes(models.Model):
+
+class Precaucao_e_orientacao(models.Model):
     texto = models.TextField()
+
+    class Meta:
+        verbose_name_plural = 'Precaucoes e Orientacoes'
