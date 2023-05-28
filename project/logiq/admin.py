@@ -3,9 +3,10 @@ from .models import *
 # Register your models here.
 
 
-@admin.register(Responsavel_Tecnico)
-class Responsavel_TecnicoAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'CNPJ', 'Num_Registro')
+# @admin.register(Responsavel_Tecnico)
+# class Responsavel_TecnicoAdmin(admin.ModelAdmin):
+#   list_display = ('nome', 'CNPJ', 'Num_Registro')
+admin.site.register(Responsavel_Tecnico)
 
 
 @admin.register(Propriedade)

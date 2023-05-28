@@ -5,11 +5,14 @@ from django.db import models
 
 class Responsavel_Tecnico(models.Model):
     nome = models.CharField(max_length=200)
-    CNPJ = models.PositiveIntegerField()
+    CNPJ = models.CharField(max_length=14)
     Num_Registro = models.PositiveIntegerField()
 
     class Meta:
         verbose_name_plural = 'Responsaveis Tecnicos'
+
+    def __str__(self):
+        return self.nome
 
 
 class Propriedade(models.Model):
