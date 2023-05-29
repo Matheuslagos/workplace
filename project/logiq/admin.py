@@ -3,10 +3,10 @@ from .models import *
 # Register your models here.
 
 
-# @admin.register(Responsavel_Tecnico)
-# class Responsavel_TecnicoAdmin(admin.ModelAdmin):
-#   list_display = ('nome', 'CNPJ', 'Num_Registro')
-admin.site.register(Responsavel_Tecnico)
+@admin.register(Responsavel_Tecnico)
+class Responsavel_TecnicoAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'CNPJ', 'Num_Registro')
+# admin.site.register(Responsavel_Tecnico)
 
 
 @admin.register(Propriedade)
@@ -25,26 +25,26 @@ class DiagnosticoAdmin(admin.ModelAdmin):
                     'modalidade_aplicacao', 'equipamento_aplicacao', 'quantidade_a_adquirir', 'n_aplicacoes', 'epoca_aplicacao')
 
 
-@admin.register(PrecaucaoUso)
-class PrecaucaoUsoAdmin(admin.ModelAdmin):
-    list_display = ('texto',)
+# @admin.register(PrecaucaoUso)
+# class PrecaucaoUsoAdmin(admin.ModelAdmin):
+ #   list_display = ('texto',)
 
 
-@admin.register(equipamentos_protecao)
-class equipamentos_protecaoAdmin(admin.ModelAdmin):
-    list_display = ('texto_equip',)
+# @admin.register(equipamentos_protecao)
+# class equipamentos_protecaoAdmin(admin.ModelAdmin):
+ #   list_display = ('texto_equip',)
 
 
-@admin.register(orientacao_mip)
-class orientacao_mipAdmin(admin.ModelAdmin):
-    list_display = ('texto_mip',)
+# @admin.register(orientacao_mip)
+# class orientacao_mipAdmin(admin.ModelAdmin):
+ #   list_display = ('texto_mip',)
 
 
-@admin.register(local_devolucao)
-class local_devolucaoAdmin(admin.ModelAdmin):
-    list_display = ('texto_dev',)
+# @admin.register(local_devolucao)
+# class local_devolucaoAdmin(admin.ModelAdmin):
+ #   list_display = ('texto_dev',)
 
 
-@admin.register(Precaucao_e_orientacao)
-class Precaucao_e_orientacaoAdmin(admin.ModelAdmin):
-    list_display = ('texto',)
+# @admin.register(Precaucao_e_orientacao)
+# class Precaucao_e_orientacaoAdmin(admin.ModelAdmin):
+ #   list_display = ('texto',)

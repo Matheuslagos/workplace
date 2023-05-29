@@ -54,36 +54,36 @@ class Diagnostico(models.Model):
         verbose_name_plural = 'Diagnosticos'
 
 
-class PrecaucaoUso(models.Model):
-    texto = models.TextField()
+# class PrecaucaoUso(models.Model):
+ #   texto = models.TextField()
 
-    class Meta:
-        verbose_name_plural = 'Precaucoes de Uso'
-
-
-class equipamentos_protecao(models.Model):
-    texto_equip = models.TextField()
-
-    class Meta:
-        verbose_name_plural = 'Equipamentos de Protecao Individual'
+  #  class Meta:
+   #     verbose_name_plural = 'Precaucoes de Uso'
 
 
-class orientacao_mip(models.Model):
-    texto_mip = models.TextField()
+# class equipamentos_protecao(models.Model):
+ #   texto_equip = models.TextField()
 
-    class Meta:
-        verbose_name_plural = 'Orientacoes MIP'
-
-
-class local_devolucao(models.Model):
-    texto_dev = models.CharField(max_length=150)
-
-    class Meta:
-        verbose_name_plural = 'Locais de Devolucao'
+  #  class Meta:
+   #     verbose_name_plural = 'Equipamentos de Protecao Individual'
 
 
-class Precaucao_e_orientacao(models.Model):
-    texto = models.TextField()
+# class orientacao_mip(models.Model):
+ #   texto_mip = models.TextField()
 
-    class Meta:
-        verbose_name_plural = 'Precaucoes e Orientacoes'
+  #  class Meta:
+   #     verbose_name_plural = 'Orientacoes MIP'
+
+
+# class local_devolucao(models.Model):
+ #   texto_dev = models.CharField(max_length=150)
+
+  #  class Meta:
+   #     verbose_name_plural = 'Locais de Devolucao'
+
+
+# class Precaucao_e_orientacao(models.Model):
+ #   texto = models.TextField()
+
+  #  class Meta:
+   #     verbose_name_plural = 'Precaucoes e Orientacoes'

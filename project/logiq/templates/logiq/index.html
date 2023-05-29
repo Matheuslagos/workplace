@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RECEITA AGRONÔMICA</title>
+</head>
+<body>
+    <h3>Responsaveis tecnicos:</h3>
+    <ul>
+        {% for models in models %}
+        <strong>Nome:</strong> {{ models.nome}}<br>
+            <strong>PF/CNPJ:</strong> {{models.Num_Registro}}<br>
+            <strong>Número CREA/CFTA:</strong> {{models.CNPJ}}
+        {% endfor %}
+    </ul>
+</body>
+</html>
