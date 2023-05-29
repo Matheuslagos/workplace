@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head>  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+    .container p {
+      margin: 0 10px; 
+    }
+  </style>
     <title>RECEITA AGRONÔMICA</title>
 </head>
 <body>
     <h4>1. RESPONSÁVEL TÉCNICO</h4>
     <ul>
         {% for Responsavel_Tecnico in responsaveis %}
-            <strong>Nome:</strong> {{ Responsavel_Tecnico.nome}}<br>
-            <strong>PF/CNPJ:</strong> {{Responsavel_Tecnico.Num_Registro}}<br>
-            <strong>Número CREA/CFTA:</strong> {{Responsavel_Tecnico.CNPJ}}
+            <strong>Responsável Técnico:</strong> {{ Responsavel_Tecnico.nome}}<br>
+            <strong>Número CREA/CFTA:</strong> {{Responsavel_Tecnico.Num_Registro}}<br>
+            <strong>CPF/CNPJ:</strong> {{Responsavel_Tecnico.CNPJ}}
         {% endfor %}
     </ul>
     <h4>2. PRODUTOR RURAL</h4>
@@ -56,7 +64,7 @@
     <p>É obrigatório o uso de EPI em todas as operações de uso, seguindo indicações do fabricante, contidas no rótulo e na bula do produto.
     </p>
 
-    <h4>ORIENTAÇÕES QUANTO AO MANEJO INTEGRADO DE PRAGAS (MIP):</h4>
+    <h4>6. ORIENTAÇÕES QUANTO AO MANEJO INTEGRADO DE PRAGAS (MIP):</h4>
     <p>Recomenda-se o manejo integrado de pragas, envolvendo todos os princípios e medidas disponíveis e viáveis de controle, como o uso de agentes biológicos. Implementar estratégias de manejo de resistência, utilizando produtos com diferentes mecanismos de ação, diminuindo resistência do alvo e minimizando a chance dos agentes de controle ficarem menos efetivo ao longo do tempo.
     </p>
 
@@ -65,10 +73,26 @@
         ESTÁBULO - Rua Santo Antônio, 123 - Floresta, Porto Alegre - RS
     </p>
 
-    <h4 style="padding-top: 6pt;padding-left: 72pt;text-indent: 0pt;text-align: center;">*LEIA ATENTAMENTE E SIGA AS ORIENTAÇÕES DO RÓTULO E A BULA DO PRODUTO.</h1>
-        <p class="s1" style="padding-top: 11pt;padding-left: 70pt;text-indent: 0pt;text-align: center;">Porto Alegre, 25 de janeiro de 2023.</p>
-        <h6 style="padding-top: 1pt;padding-left: 281pt;text-indent: -172pt;text-align: left;">PAULO DOS SANTOS             <span class="s1">Responsável Técnico: </span>JOÃO DA SILVA <span class="s1">CPF: 613.339.040-96</span></h6>
-        <p class="s1" style="padding-left: 281pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Número do registro (CREA/CFTA): 61333904096</p>
+    <h4 style="padding-top: 6pt;padding-left: 72pt;text-indent: 0pt;text-align: center;">*LEIA ATENTAMENTE E SIGA AS ORIENTAÇÕES DO RÓTULO E A BULA DO PRODUTO.</h1><br><br>
+        <p class="s1" style="padding-top: 11pt;padding-left: 70pt;text-indent: 0pt;text-align: center;">Porto Alegre, 25 de janeiro de 2023.</p><br><br><br><br><br>
+        
+
+        <div class="container">
+            <p><p>_______________________________<br>
+                {% for ProdutorRural in produtores %}
+                {{ ProdutorRural.nome}}
+                {% endfor %}
+            </p>
+            <p><p>_______________________________<br>
+                {% for Responsavel_Tecnico in responsaveis %}
+                Responsável Técnico:{{ Responsavel_Tecnico.nome}}<br>
+                CPF/CNPJ:{{Responsavel_Tecnico.CNPJ}}<br>
+                Número CREA/CFTA:</strong> {{Responsavel_Tecnico.Num_Registro}}
+                {% endfor %}
+            </p>
+          </div>
+
+
 
 
 
