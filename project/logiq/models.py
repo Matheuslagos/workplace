@@ -16,7 +16,8 @@ class Responsavel_Tecnico(models.Model):
 
 
 class Propriedade(models.Model):
-    descricao = models.CharField(max_length=100)
+    descricao = models.CharField(max_length=30)
+    nomefazenda = models.CharField(max_length=100)
     cnpj = models.CharField(max_length=14)
     local = models.CharField(max_length=100)
     latitude = models.DecimalField(max_digits=9, decimal_places=6)

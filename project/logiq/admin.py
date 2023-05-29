@@ -11,7 +11,8 @@ class Responsavel_TecnicoAdmin(admin.ModelAdmin):
 
 @admin.register(Propriedade)
 class PropriedadeAdmin(admin.ModelAdmin):
-    list_display = ('descricao', 'cnpj', 'local', 'latitude', 'longitude')
+    list_display = ('descricao', 'nomefazenda', 'cnpj',
+                    'local', 'latitude', 'longitude')
 
 
 @admin.register(ProdutorRural)

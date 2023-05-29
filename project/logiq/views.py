@@ -6,5 +6,8 @@ from .models import *
 
 
 def index(request):
-    models = Responsavel_Tecnico.objects.all()
-    return render(request, 'logiq/index.html', {'models': models})
+    responsaveis = Responsavel_Tecnico.objects.all()
+    produtores = ProdutorRural.objects.all()
+    propriedades = Propriedade.objects.all()
+    diagnosticos = Diagnostico.objects.all()
+    return render(request, 'logiq/index.html', {'responsaveis': responsaveis, 'produtores': produtores, 'diagnosticos': diagnosticos, 'propriedades': propriedades})
