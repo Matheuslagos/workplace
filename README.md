@@ -21,6 +21,6 @@
  
  3. Agora para iniciar o seu servidor local com a aplicação use ```py manage.py runserver```
  
- 4. após iniciar o servidor entre no link : http://127.0.0.1:8000/logiq
+ 4. após iniciar o servidor entre no link : http://127.0.0.1:8000/logiq (essa é rota padrão para a pagina inicial "localhost:porta/logiq")
  
  5. Agora se ocorreu tudo bem você esta na pagina inicial da aplicação.
