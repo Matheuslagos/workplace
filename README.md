@@ -24,3 +24,7 @@
  4. após iniciar o servidor entre no link : http://127.0.0.1:8000/logiq (essa é rota padrão para a pagina inicial "localhost:porta/logiq")
  
  5. Agora se ocorreu tudo bem você esta na pagina inicial da aplicação.
+ 
+ 7. Você pode entrar na página do Admin clicando no botão "Admin", irá pedir um usuario e senha, use "admin" nos dois campos. Agora você pode fazer as alterações nas tabelas do banco de dados usando a interface Jazzmin do django.
+ 
+ 8. 
