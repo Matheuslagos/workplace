@@ -30,6 +30,6 @@
  
  7. Você pode entrar na página do Admin clicando no botão "Admin", irá pedir um usuario e senha, use "admin" nos dois campos. Agora você pode fazer as alterações nas tabelas do banco de dados usando a interface Jazzmin do django.
 
- 
+ ![alt text](ER.png)
  
  
