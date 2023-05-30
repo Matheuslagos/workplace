@@ -1,5 +1,6 @@
 ## AgroSYS
- ##Sistema de impressão de dados
+
+<h3>Sistema de impressão de dados<h3>
  
 ### Ferramentas usadas no projeto
  1. Python
@@ -10,7 +11,7 @@
  
  ### INSTRUÇÕES
  
- 0- Tenha o pyhton e pip instalado.
+ 0. Tenha o pyhton e pip instalado.
  
  1. Use o comando no seu ambiente virutal dentro do projeto
  ```pip install -r requirements.txt``` 
@@ -25,6 +26,10 @@
  
  5. Agora se ocorreu tudo bem você esta na pagina inicial da aplicação.
  
- 7. Você pode entrar na página do Admin clicando no botão "Admin", irá pedir um usuario e senha, use "admin" nos dois campos. Agora você pode fazer as alterações nas tabelas do banco de dados usando a interface Jazzmin do django.
+ 6. Na pagina inicial você pode Ver o documento (Detailview), e ou clicar no botão imprimir onde você vai escolher a impressão com ou sem as precauções.
  
- 8. 
+ 7. Você pode entrar na página do Admin clicando no botão "Admin", irá pedir um usuario e senha, use "admin" nos dois campos. Agora você pode fazer as alterações nas tabelas do banco de dados usando a interface Jazzmin do django.
+
+ 
+ 
+ 
