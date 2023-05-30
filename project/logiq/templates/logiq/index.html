@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Seu Título</title>
+    <title>AGROSYS</title>
     <style>
+        body {
+            margin: 0;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .custom-button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-family: "Arial", sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .question-container {
+          display: none;
+          margin-top: 20px;
+          text-align: center;
+      }
+      .question-text {
+        font-family: "Arial", sans-serif;
+        font-size: 18px;
+        color: #333;}
+    .question-button {
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-family: "Arial", sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 10px;
+  }
+
         /* Estilos para o header */
         header {
             background-color: #f2f2f2;
             border-bottom: 2px solid #ccc;
             padding: 10px;
+            text-align: center;
         }
 
         /* Estilos para o texto "Agrosys" */
@@ -21,8 +65,8 @@
         .admin-button {
             display: inline-block;
             border: 1px solid #ccc;
-            background-color: #007bff;
-            color: #fff;
+            background-color: #007bff; /* Azul */
+            color: #fff; /* Texto branco */
             padding: 8px 16px;
             text-decoration: none;
             font-family: "Arial", sans-serif;
@@ -31,68 +75,49 @@
         }
 
         .admin-button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Estilos para os botões no conteúdo */
-        .content-buttons {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .custom-button {
-            display: inline-block;
-            border: none;
-            background-color: #007bff;
-            color: #fff;
-            padding: 8px 16px;
-            margin-right: 10px;
-            font-family: "Arial", sans-serif;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .custom-button:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Criação dos botões de conteúdo
-            var button1 = $('<button>', {
-                text: 'Botão 1',
-                class: 'custom-button'
+            $(".custom-button").click(function() {
+                $(".question-container").show();
             });
 
-            var button2 = $('<button>', {
-                text: 'Botão 2',
-                class: 'custom-button'
-            });
+            $(".question-button").click(function() {
+                // Aqui você pode adicionar a lógica para a ação de impressão
+                // Por exemplo, abrir uma janela de impressão ou realizar outras ações relacionadas à impressão
 
-            // Adicionar os botões ao conteúdo
-            $('.content-buttons').append(button1, button2);
+                // Após a ação, você pode ocultar a div da pergunta novamente
+                $(".question-container").hide();
+            });
         });
     </script>
 </head>
 <body>
 
 <header>
-    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
-        <div>
-            <h1>Agrosys</h1>
-        </div>
-        <div>
-            <a href="{% url 'admin:index' %}" class="admin-button">Admin</a>
-        </div>
+    <div>
+        <h1>Agrosys</h1>
+    </div>
+    <div>
+        <a href="{% url 'admin:index' %}" class="admin-button">Admin</a>
     </div>
 </header>
-
-<div class="content-buttons">
-    <!-- Os botões serão adicionados aqui -->
+<div class="button-container">
+  <button class="custom-button">Imprimir</button>
 </div>
 
-<!-- O restante do conteúdo do seu template -->
+<div class="question-container">
+  <div class="question-text">Deseja imprimir as PRECAUÇÕES DE USO?</div>
+  <button class="question-button">Sim</button>
+  <button class="question-button">Não</button>
+</div>
+<div class="button-container">
+  <a href="{% url 'logiq:documentoCompleto' %}" class="custom-button">Ver Documento</a>
+  <a href="{% url 'logiq:render_pdf_view' %}" class="custom-button">Imprimir</a>
+</div>
 
 </body>
 </html>
