@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+    .container p {
+      margin: 0 10px; 
+    }
+  </style>
+    <title>RECEITA AGRONÔMICA</title>
+</head>
+<body>
+    <div>
+    <h4>1. RESPONSÁVEL TÉCNICO</h4>
+    <ul>
+        {% for Responsavel_Tecnico in responsaveis %}
+            <strong>Responsável Técnico:</strong> {{ Responsavel_Tecnico.nome}}<br>
+            <strong>Número CREA/CFTA:</strong> {{Responsavel_Tecnico.Num_Registro}}<br>
+            <strong>CPF/CNPJ:</strong> {{Responsavel_Tecnico.CNPJ}}
+        {% endfor %}
+    </ul>
+    </div>
+    <h4>2. PRODUTOR RURAL</h4>
+    <ul>
+        {% for ProdutorRural in produtores %}
+            <strong>Propriedade:</strong> {{ ProdutorRural.propriedade}}<br>
+            <strong>Nome:</strong> {{ProdutorRural.nome}}<br>
+            
+        {% endfor %}
+    </ul>
+    <h4>3. PROPRIEDADE</h4>
+    <ul>
+        {% for Propriedade in propriedades %}
+            <strong>Descrição:</strong> {{ Propriedade.nomefazenda}}<br>
+            <strong>cnpj:</strong> {{Propriedade.cnpj}}<br>
+            <strong>local:</strong> {{Propriedade.local}}<br>
+            <strong>latitude:</strong> {{Propriedade.latitude}}<br>
+            <strong>longitude:</strong> {{Propriedade.longitude}}<br>
+        {% endfor %}
+    </ul>
+    <h4>4. DIAGNÓSTICOS E RECOMENDAÇÕES TÉCNICAS:</h4>
+    <ul>
+        {% for Diagnostico in diagnosticos %}
+            <strong>cultura:</strong> {{ Diagnostico.cultura}}<br>
+            <strong>produto comercial:</strong> {{Diagnostico.produto_comercial}}<br>
+            <strong>alvo:</strong> {{Diagnostico.alvo}}<br>
+            <strong>area a tratar:</strong> {{Diagnostico.area_a_tratar}}<br>
+            <strong>volume da calda:</strong> {{Diagnostico.volume_da_calda}}<br>
+            <strong>intervalo de segurança:</strong> {{Diagnostico.intervalo_de_seguranca}}<br>
+            <strong>modalidade aplicação:</strong> {{Diagnostico.modalidade_aplicacao}}<br>
+            <strong>equipamento aplicacao:</strong> {{Diagnostico.equipamento_aplicacao}}<br>
+            <strong>quantidade a adquirir:</strong> {{Diagnostico.quantidade_a_adquirir}}<br>
+            <strong>Numero de aplicaçoes:</strong> {{Diagnostico.n_aplicacoes}}<br>
+            <strong>epoca aplicacao:</strong> {{Diagnostico.epoca_aplicacao}}<br>
+
+        {% endfor %}
+    </ul>
+    <h4>5. PRECAUÇÕES DE USO</h4>
+    <p>  Os tratamentos fitossanitários deverão ser feitos com rigorosa observância dos cuidados e das recomendações técnicas, no sentido de garantir a eficiência do tratamento, e não ocasionar danos à saúde pública, ao meio ambiente e às explorações agropecuárias circunvizinhas, bem como, à qualidade dos produtos obtidos. Não é permitida a aplicação aérea de agrotóxicos e outros biocidas em áreas situadas a uma distância mínima de 500 metros adjacente a mananciais de captação de água para abastecimento de populações, núcleos populacionais, escolas, habitações e locais de recreação, e, de 250 metros adjacentes a mananciais de água, moradias isoladas e agrupamento de animais e culturas susceptíveis a danos. Será permitida, porém, aplicação de agrotóxicos e biocidas nas lavouras, se efetuada por atomizadores ou canhões, numa distância mínima de 250 metros e, por aparelhos costais ou tratorizados de barra, numa distância mínima de 50 metros dos locais acima mencionados. </p>
+    <p>  Em todos os casos as aplicações somente poderão ser feitas quando a direção do vento for tal que não leve resíduos de agrotóxicos e biocidas para estes locais. É obrigatório o uso de equipamentos de aplicação que utilizem tecnologia de redução de deriva de pelo menos 50% para aplicação tratorizada nas culturas de café e cana-de-açúcar. Não utilizar pulverizadores costais (manuais, pressurizados ou motorizados). Implementar bordadura de no mínimo, 10 metros livres de aplicação tratorizada de 2,4-D, com início no limite externo da plantação em direção ao seu interior sempre que houver povoações, cidades, vilas, bairros, bem como moradias ou escolas isoladas, a menos de 500 metros do limite externo da plantação. Evitar aplicações em proximidade de culturas sensíveis. São sensíveis ao produto todas as culturas dicotiledôneas, hortaliças, bananeiras, quando a pulverização atinge diretamente a folhagem. A utilização fora das especificações pode causar sérios danos em culturas sensíveis. Dessa forma, não aplique quando houver possibilidade de atingir estas culturas. Não aplique o produto na presença de ventos fortes e nas horas mais quentes do dia. Quando o herbicida é usado na pós-emergência das culturas indicadas, não deve ser adicionado adjuvante na calda. Aplique somente as doses recomendadas e observe o intervalo de segurança (intervalo de tempo entre a última aplicação e a colheita). Para aplicação tratorizada, o mesmo indivíduo não pode realizar as atividades de mistura, abastecimento e aplicação.
+    </p>
+
+    <h4>5. EQUIPAMENTOS DE PROTEÇÃO INDIVIDUAL (EPI):</h4>
+    <p>É obrigatório o uso de EPI em todas as operações de uso, seguindo indicações do fabricante, contidas no rótulo e na bula do produto.
+    </p>
+
+    <h4>6. ORIENTAÇÕES QUANTO AO MANEJO INTEGRADO DE PRAGAS (MIP):</h4>
+    <p>Recomenda-se o manejo integrado de pragas, envolvendo todos os princípios e medidas disponíveis e viáveis de controle, como o uso de agentes biológicos. Implementar estratégias de manejo de resistência, utilizando produtos com diferentes mecanismos de ação, diminuindo resistência do alvo e minimizando a chance dos agentes de controle ficarem menos efetivo ao longo do tempo.
+    </p>
+
+    <h4>7. LOCAL PARA DEVOLUÇÃO DE EMBALAGENS VAZIAS:</h4>
+    <p> 
+        ESTÁBULO - Rua Santo Antônio, 123 - Floresta, Porto Alegre - RS
+    </p>
+
+    <h4 style="padding-top: 6pt;padding-left: 72pt;text-indent: 0pt;text-align: center;">*LEIA ATENTAMENTE E SIGA AS ORIENTAÇÕES DO RÓTULO E A BULA DO PRODUTO.</h1><br><br>
+        <p class="s1" style="padding-top: 11pt;padding-left: 70pt;text-indent: 0pt;text-align: center;">Porto Alegre, 25 de janeiro de 2023.</p><br><br><br><br><br>
+        
+
+        <div class="container">
+            <p><p>_______________________________<br>
+                {% for ProdutorRural in produtores %}
+                {{ ProdutorRural.nome}}
+                {% endfor %}
+            </p>
+            <p><p>_______________________________<br>
+                {% for Responsavel_Tecnico in responsaveis %}
+                Responsável Técnico:{{ Responsavel_Tecnico.nome}}<br>
+                CPF/CNPJ:{{Responsavel_Tecnico.CNPJ}}<br>
+                Número CREA/CFTA:</strong> {{Responsavel_Tecnico.Num_Registro}}
+                {% endfor %}
+            </p>
+          </div><br><br><br><br><br>
+          <h3 style="padding-top: 5pt;padding-left: 70pt;text-indent: 0pt;text-align: center;">PRECAUÇÕES DE USO E OUTRAS ORIENTAÇÕES</h3>
+          <ol id="l2"><li data-list-text="1."><p style="padding-top: 5pt;padding-left: 28pt;text-indent: -9pt;text-align: left;">Este produto é para uso EXCLUSIVAMENTE agrícola.</p></li><li data-list-text="2."><p style="padding-left: 28pt;text-indent: -9pt;text-align: left;">Somente utilize o produto para a cultura, o alvo e as doses recomendadas.</p></li><li data-list-text="3."><p style="padding-left: 28pt;text-indent: -9pt;text-align: left;">Respeitar o intervalo de segurança (período entre a última aplicação do produto e a colheita).</p></li><li data-list-text="4."><p style="padding-left: 28pt;text-indent: -9pt;text-align: left;">Aplicar o produto, preferencialmente, nas horas mais frescas do dia, evitando-se dias chuvosos e com ventos fortes.</p></li><li data-list-text="5."><p style="padding-left: 28pt;text-indent: -9pt;text-align: left;">É de inteira responsabilidade do usuário, a utilização que não siga as orientações do fabricante e responsável técnico.</p></li><li data-list-text="6."><p style="padding-left: 18pt;text-indent: 0pt;text-align: left;">Não manuseie ou aplique o produto sem os equipamentos de proteção individual (EPI) recomendados pelo fabricando no preparo da calda e na aplicação do produto.</p></li><li data-list-text="7."><p style="padding-left: 18pt;text-indent: 0pt;text-align: justify;">Utilize os equipamentos de proteção individual (EPI), tais como: macacão com tratamento hidrorrepelente com mangas compridas passando por cima do punho das luvas e as pernas das calças por cima das botas; botas de borracha; avental impermeável; máscara com filtro específico; óculos de segurança com proteção lateral e luvas de nitrila, devendo ser vestidos e retirados na ordem correta, conforme pictogramas contidos no rótulo e bula do produto.</p></li><li data-list-text="8."><p style="padding-left: 28pt;text-indent: -9pt;text-align: left;">Não utilize equipamentos de proteção individual (EPI) danificados.</p></li><li data-list-text="9."><p style="padding-left: 28pt;text-indent: -9pt;text-align: left;">Sempre utilize equipamento de proteção com certificado de aprovação (CA) e dentro do vencimento.</p></li><li data-list-text="10."><p style="padding-left: 34pt;text-indent: -15pt;text-align: left;">Não coma, não beba e não fume durante o manuseio e aplicação do produto.</p></li><li data-list-text="11."><p style="padding-left: 34pt;text-indent: -15pt;text-align: left;">Manuseie o produto em local aberto e ventilado.</p></li><li data-list-text="12."><p style="padding-left: 34pt;text-indent: -15pt;text-align: left;">Não utilize equipamento com vazamentos ou defeitos. Mantenha a regulagem do equipamento e dos bicos.</p></li><li data-list-text="13."><p style="padding-left: 34pt;text-indent: -15pt;text-align: left;">Não desentupa bicos, orifícios e válvulas com a boca.</p></li><li data-list-text="14."><p style="padding-left: 34pt;text-indent: -15pt;text-align: left;">Não transporte ou armazene o produto juntamente com alimentos, medicamentos, rações, animais e pessoas.</p></li><li data-list-text="15."><p style="padding-left: 34pt;text-indent: -15pt;text-align: left;">Para o transporte do produto, deve-se respeitar legislação vigente específica.</p></li><li data-list-text="16."><p style="padding-left: 18pt;text-indent: 0pt;text-align: justify;">Não permita a entrada de pessoas, animais e pessoas estranhas no local onde o produto foi aplicado, respeitando o período de reentrada, prescrita em bula. Se houver necessidade de reentrar na área antes desse período, deve-se usar os mesmos EPIs utilizados na aplicação.</p></li><li data-list-text="17."><p style="padding-left: 18pt;text-indent: 0pt;text-align: justify;">O depósito dos agrotóxicos deve seguir recomendações da norma técnica ABNT 9843, devendo ser exclusivo para agrotóxicos, permanecer fechado, identificado com placa “Cuidado Veneno” e permitido entrada somente de pessoas autorizadas, etc.</p></li><li data-list-text="18."><p style="padding-left: 18pt;text-indent: 0pt;text-align: justify;">Caso ocorra contato acidental da pessoa com o produto, siga as orientações descritas em primeiros socorros e procure rapidamente um serviço médico de emergência, levando este receituário, a bula ou Ficha de Informações de Produtos Químicos (FISPQ).</p></li><li data-list-text="19."><p style="padding-left: 18pt;text-indent: 0pt;text-align: left;">Após as aplicações, lave as luvas para evitar contaminação. Deve-se tomar banho imediatamente com água fria e sabão neutro e colocar roupas limpas.</p></li><li data-list-text="20."><p style="padding-left: 34pt;text-indent: -15pt;text-align: left;">Nunca reutilize a embalagem vazia ou fracione o produto. Mantenha-o na embalagem original e sempre fechado.</p></li><li data-list-text="21."><p style="padding-left: 18pt;text-indent: 0pt;text-align: justify;">Tríplice Lavagem: O operador deverá utilizar os mesmos EPIs recomendados para a aplicação do produto e seguir os passos: Esvazie completamente o conteúdo da embalagem no tanque do pulverizador, mantendo-o na posição vertical durante 30 segundos. Adicione água limpa à embalagem até ¼ do seu volume. Tampe bem a embalagem e agite-a, por 30 segundos. Despeje a água de lavagem no tanque pulverizador. Faça esta operação três vezes. Inutilize a embalagem plástica ou metálica perfurando o fundo.</p></li><li data-list-text="22."><p style="padding-left: 34pt;text-indent: -15pt;text-align: left;">Devolver as embalagens vazias lavadas em local indicado na nota fiscal ou nesse receituário.</p></li><li data-list-text="23."><p style="padding-left: 18pt;text-indent: 0pt;text-align: justify;">Destinação final de resíduos e embalagens vazias: A destinação final das embalagens vazias, após a devolução pelos usuários, somente poderá ser realizada pela Empresa Registrante ou por empresas legalmente autorizadas pelos órgãos competentes.</p></li></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

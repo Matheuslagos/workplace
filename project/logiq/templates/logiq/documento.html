@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+    .container p {
+      margin: 0 10px; 
+    }
+  </style>
+    <title>RECEITA AGRONÔMICA</title>
+</head>
+<body>
+    <h4>1. RESPONSÁVEL TÉCNICO</h4>
+    <ul>
+        {% for Responsavel_Tecnico in responsaveis %}
+            <strong>Responsável Técnico:</strong> {{ Responsavel_Tecnico.nome}}<br>
+            <strong>Número CREA/CFTA:</strong> {{Responsavel_Tecnico.Num_Registro}}<br>
+            <strong>CPF/CNPJ:</strong> {{Responsavel_Tecnico.CNPJ}}
+        {% endfor %}
+    </ul>
+    <h4>2. PRODUTOR RURAL</h4>
+    <ul>
+        {% for ProdutorRural in produtores %}
+            <strong>Propriedade:</strong> {{ ProdutorRural.propriedade}}<br>
+            <strong>Nome:</strong> {{ProdutorRural.nome}}<br>
+            
+        {% endfor %}
+    </ul>
+    <h4>3. PROPRIEDADE</h4>
+    <ul>
+        {% for Propriedade in propriedades %}
+            <strong>Descrição:</strong> {{ Propriedade.nomefazenda}}<br>
+            <strong>cnpj:</strong> {{Propriedade.cnpj}}<br>
+            <strong>local:</strong> {{Propriedade.local}}<br>
+            <strong>latitude:</strong> {{Propriedade.latitude}}<br>
+            <strong>longitude:</strong> {{Propriedade.longitude}}<br>
+        {% endfor %}
+    </ul>
+    <h4>4. DIAGNÓSTICOS E RECOMENDAÇÕES TÉCNICAS:</h4>
+    <ul>
+        {% for Diagnostico in diagnosticos %}
+            <strong>cultura:</strong> {{ Diagnostico.cultura}}<br>
+            <strong>produto comercial:</strong> {{Diagnostico.produto_comercial}}<br>
+            <strong>alvo:</strong> {{Diagnostico.alvo}}<br>
+            <strong>area a tratar:</strong> {{Diagnostico.area_a_tratar}}<br>
+            <strong>volume da calda:</strong> {{Diagnostico.volume_da_calda}}<br>
+            <strong>intervalo de segurança:</strong> {{Diagnostico.intervalo_de_seguranca}}<br>
+            <strong>modalidade aplicação:</strong> {{Diagnostico.modalidade_aplicacao}}<br>
+            <strong>equipamento aplicacao:</strong> {{Diagnostico.equipamento_aplicacao}}<br>
+            <strong>quantidade a adquirir:</strong> {{Diagnostico.quantidade_a_adquirir}}<br>
+            <strong>Numero de aplicaçoes:</strong> {{Diagnostico.n_aplicacoes}}<br>
+            <strong>epoca aplicacao:</strong> {{Diagnostico.epoca_aplicacao}}<br>
+
+        {% endfor %}
+    </ul>
+    <h4>5. PRECAUÇÕES DE USO</h4>
+    <p>  Os tratamentos fitossanitários deverão ser feitos com rigorosa observância dos cuidados e das recomendações técnicas, no sentido de garantir a eficiência do tratamento, e não ocasionar danos à saúde pública, ao meio ambiente e às explorações agropecuárias circunvizinhas, bem como, à qualidade dos produtos obtidos. Não é permitida a aplicação aérea de agrotóxicos e outros biocidas em áreas situadas a uma distância mínima de 500 metros adjacente a mananciais de captação de água para abastecimento de populações, núcleos populacionais, escolas, habitações e locais de recreação, e, de 250 metros adjacentes a mananciais de água, moradias isoladas e agrupamento de animais e culturas susceptíveis a danos. Será permitida, porém, aplicação de agrotóxicos e biocidas nas lavouras, se efetuada por atomizadores ou canhões, numa distância mínima de 250 metros e, por aparelhos costais ou tratorizados de barra, numa distância mínima de 50 metros dos locais acima mencionados. </p>
+    <p>  Em todos os casos as aplicações somente poderão ser feitas quando a direção do vento for tal que não leve resíduos de agrotóxicos e biocidas para estes locais. É obrigatório o uso de equipamentos de aplicação que utilizem tecnologia de redução de deriva de pelo menos 50% para aplicação tratorizada nas culturas de café e cana-de-açúcar. Não utilizar pulverizadores costais (manuais, pressurizados ou motorizados). Implementar bordadura de no mínimo, 10 metros livres de aplicação tratorizada de 2,4-D, com início no limite externo da plantação em direção ao seu interior sempre que houver povoações, cidades, vilas, bairros, bem como moradias ou escolas isoladas, a menos de 500 metros do limite externo da plantação. Evitar aplicações em proximidade de culturas sensíveis. São sensíveis ao produto todas as culturas dicotiledôneas, hortaliças, bananeiras, quando a pulverização atinge diretamente a folhagem. A utilização fora das especificações pode causar sérios danos em culturas sensíveis. Dessa forma, não aplique quando houver possibilidade de atingir estas culturas. Não aplique o produto na presença de ventos fortes e nas horas mais quentes do dia. Quando o herbicida é usado na pós-emergência das culturas indicadas, não deve ser adicionado adjuvante na calda. Aplique somente as doses recomendadas e observe o intervalo de segurança (intervalo de tempo entre a última aplicação e a colheita). Para aplicação tratorizada, o mesmo indivíduo não pode realizar as atividades de mistura, abastecimento e aplicação.
+    </p>
+
+    <h4>5. EQUIPAMENTOS DE PROTEÇÃO INDIVIDUAL (EPI):</h4>
+    <p>É obrigatório o uso de EPI em todas as operações de uso, seguindo indicações do fabricante, contidas no rótulo e na bula do produto.
+    </p>
+
+    <h4>6. ORIENTAÇÕES QUANTO AO MANEJO INTEGRADO DE PRAGAS (MIP):</h4>
+    <p>Recomenda-se o manejo integrado de pragas, envolvendo todos os princípios e medidas disponíveis e viáveis de controle, como o uso de agentes biológicos. Implementar estratégias de manejo de resistência, utilizando produtos com diferentes mecanismos de ação, diminuindo resistência do alvo e minimizando a chance dos agentes de controle ficarem menos efetivo ao longo do tempo.
+    </p>
+
+    <h4>7. LOCAL PARA DEVOLUÇÃO DE EMBALAGENS VAZIAS:</h4>
+    <p> 
+        ESTÁBULO - Rua Santo Antônio, 123 - Floresta, Porto Alegre - RS
+    </p>
+
+    <h4 style="padding-top: 6pt;padding-left: 72pt;text-indent: 0pt;text-align: center;">*LEIA ATENTAMENTE E SIGA AS ORIENTAÇÕES DO RÓTULO E A BULA DO PRODUTO.</h1><br><br>
+        <p class="s1" style="padding-top: 11pt;padding-left: 70pt;text-indent: 0pt;text-align: center;">Porto Alegre, 25 de janeiro de 2023.</p><br><br><br><br><br>
+        
+
+        <div class="container">
+            <p><p>_______________________________<br>
+                {% for ProdutorRural in produtores %}
+                {{ ProdutorRural.nome}}
+                {% endfor %}
+            </p>
+            <p><p>_______________________________<br>
+                {% for Responsavel_Tecnico in responsaveis %}
+                Responsável Técnico:{{ Responsavel_Tecnico.nome}}<br>
+                CPF/CNPJ:{{Responsavel_Tecnico.CNPJ}}<br>
+                Número CREA/CFTA:</strong> {{Responsavel_Tecnico.Num_Registro}}
+                {% endfor %}
+            </p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
