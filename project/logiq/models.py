@@ -16,8 +16,8 @@ class Responsavel_Tecnico(models.Model):
 
 
 class Propriedade(models.Model):
-    descricao = models.CharField(max_length=30)
-    nomefazenda = models.CharField(max_length=100)
+    nomefazenda = models.CharField(max_length=30)
+    descricao = models.CharField(max_length=100)
     cnpj = models.CharField(max_length=14)
     local = models.CharField(max_length=100)
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
@@ -27,7 +27,7 @@ class Propriedade(models.Model):
         verbose_name_plural = 'Propriedades'
 
     def __str__(self):
-        return self.descricao
+        return self.nomefazenda
 
 
 class ProdutorRural(models.Model):

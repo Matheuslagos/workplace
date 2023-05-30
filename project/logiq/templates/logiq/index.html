@@ -86,10 +86,7 @@
             });
 
             $(".question-button").click(function() {
-                // Aqui você pode adicionar a lógica para a ação de impressão
-                // Por exemplo, abrir uma janela de impressão ou realizar outras ações relacionadas à impressão
-
-                // Após a ação, você pode ocultar a div da pergunta novamente
+                
                 $(".question-container").hide();
             });
         });
@@ -109,14 +106,18 @@
   <button class="custom-button">Imprimir</button>
 </div>
 
+
+
 <div class="question-container">
-  <div class="question-text">Deseja imprimir as PRECAUÇÕES DE USO?</div>
-  <button class="question-button">Sim</button>
-  <button class="question-button">Não</button>
+  <div class="question-text">Deseja imprimir as PRECAUÇÕES DE USO junto ao documento?</div><br>
+  <a href="{% url 'logiq:render_pdf_view' %}" class="custom-button">SIM</a>
+  <a href="{% url 'logiq:render_pdf_view_onlydoc' %}" class="custom-button">NÃO</a>
 </div>
+
+
 <div class="button-container">
   <a href="{% url 'logiq:documentoCompleto' %}" class="custom-button">Ver Documento</a>
-  <a href="{% url 'logiq:render_pdf_view' %}" class="custom-button">Imprimir</a>
+  
 </div>
 
 </body>
